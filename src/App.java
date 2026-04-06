@@ -16,7 +16,7 @@ public class App {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // 🔥 เริ่มที่หน้า Start
+        // เริ่มที่หน้า Start
         StartScreen start = new StartScreen(frame);
         frame.add(start);
 

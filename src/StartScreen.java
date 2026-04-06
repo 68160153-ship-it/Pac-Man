@@ -7,7 +7,6 @@ public class StartScreen extends JPanel {
     private Image bg;
     private JFrame frame;
 
-    // 🎯 พื้นที่ปุ่ม (ปรับได้)
     private Rectangle startArea = new Rectangle(195, 390, 196, 60);
 
     public StartScreen(JFrame frame) {
@@ -18,7 +17,6 @@ public class StartScreen extends JPanel {
         // โหลดรูป
         bg = new ImageIcon(getClass().getResource("/start_bg.png")).getImage();
 
-        // 🖱️ คลิก
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -28,7 +26,6 @@ public class StartScreen extends JPanel {
             }
         });
 
-        // 🖱️ hover + เปลี่ยน cursor + repaint
         addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseMoved(MouseEvent e) {
@@ -57,17 +54,14 @@ public class StartScreen extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        // 🖼️ วาด background
         g.drawImage(bg, 0, 0, getWidth(), getHeight(), null);
 
-        // ✨ hover effect
         Point mouse = getMousePosition();
         if (mouse != null && startArea.contains(mouse)) {
             g.setColor(new Color(255, 255, 255, 60));
             g.fillRect(startArea.x, startArea.y, startArea.width, startArea.height);
         }
 
-        // 🔴 DEBUG (เปิดไว้ก่อน ปรับตำแหน่งให้ตรงแล้วค่อยลบ)
         g.setColor(Color.RED);
 
     }
