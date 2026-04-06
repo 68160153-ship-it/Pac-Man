@@ -15,7 +15,7 @@ public class StartScreen extends JPanel {
         setFocusable(true);
 
         // โหลดรูป
-        bg = new ImageIcon(getClass().getResource("/start_bg.png")).getImage();
+        bg = new ImageIcon(getClass().getResource("/images/start_bg.png")).getImage();
 
         addMouseListener(new MouseAdapter() {
             @Override
